@@ -6,21 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      keyframes: {
-        fall: {
-          '0%': {
-            transform: 'translateY(-100%)',
-            opacity: '1',
-          },
-          '100%': {
-            transform: 'translateY(100%)',
-            opacity: '0',
-          },
-        },
-      },
-      animation: {
-        fall: 'fall linear infinite',
-      },
+      margin: {
+        '128': '32rem', 
+        '144': '36rem',
+        '160': '40rem',
+      }
     },
   },
   plugins: [],

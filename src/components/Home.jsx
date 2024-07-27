@@ -50,7 +50,7 @@ const Home = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+  }
 
   return (
     <Box id="home" className="flex flex-col items-center mt-6">
@@ -65,16 +65,16 @@ const Home = () => {
             justifyContent: 'center',
             marginBottom: '5px',
             width: {
-              xs: '150px',
-              sm: '200px',
-              md: '250px',
-              lg: '300px',
+              xs: '200px',
+              sm: '250px',
+              md: '300px',
+              lg: '350px',
             },
             height: {
-              xs: '150px',
-              sm: '200px',
-              md: '250px',
-              lg: '300px',
+              xs: '200px',
+              sm: '250px',
+              md: '300px',
+              lg: '350px',
             },
             boxShadow: `inset 0 5px 13px ${darkMode ? BG_COLOR1 : BG_COLOR},
                         0 5px 13px ${darkMode ? BG_COLOR : BG_COLOR1}`,
@@ -225,6 +225,7 @@ const Home = () => {
           Download CV
         </Button>
       </Grow>
+
     </Box>
   );
 }

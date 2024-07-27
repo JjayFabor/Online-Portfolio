@@ -17,14 +17,13 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../ThemeContext';
 
 const Navbar = () => {
   const { darkMode, handleThemeChange, BG_COLOR, BG_COLOR1 } = useContext(ThemeContext);
   const [currentSection, setCurrentSection] = useState('');
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isDarkModeToggle, setIsDarkModeToggle] = useState(false);
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -34,7 +33,7 @@ const Navbar = () => {
   const handleNavigation = (section) => {
     const sectionElement = document.getElementById(section);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'auto' });
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
     }
     if (isMobile) {
       setDrawerOpen(false);
@@ -75,19 +74,13 @@ const Navbar = () => {
     const currentPath = window.location.hash.substring(1);
     if (currentPath) {
       setCurrentSection(currentPath);
-      handleNavigation(currentPath, true);
+      handleNavigation(currentPath);
     }
   }, []);
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
-
-  // const handleThemeToggle = () => {
-  //   //setIsDarkModeToggle(true);
-  //   handleThemeChange(); 
-  // };
-
 
   const drawerContent = (
     <Box
@@ -105,7 +98,6 @@ const Navbar = () => {
       </List>
     </Box>
   );
-
 
   return (
     <>
@@ -156,7 +148,7 @@ const Navbar = () => {
               ))}
             </Box>
           )}
-          <IconButton onClick={handleThemeChange} sx={{ marginLeft: 2 }}>
+          <IconButton onClick={handleThemeChange} sx={{ marginLeft: 2 }} aria-label="toggle dark mode">
             {darkMode ? <Brightness7Icon sx={{ color: 'black' }} /> : <Brightness4Icon sx={{ color: 'white' }} />}
           </IconButton>
         </Toolbar>

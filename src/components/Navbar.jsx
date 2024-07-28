@@ -28,7 +28,7 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const sections = ['home', 'about', 'projects', 'resume', 'contact'];
+  const sections = ['home', 'about', 'projects', 'experience', 'contact'];
 
   const handleNavigation = (section) => {
     const sectionElement = document.getElementById(section);

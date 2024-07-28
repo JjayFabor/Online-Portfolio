@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import About from './components/About';
+import Contact from './components/Contact';
 import Experience from './components/Experience';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -23,14 +24,14 @@ const App = () => {
         <div id="about" className="h-screen flex items-center justify-center relative mb-166">
           <About />
         </div>
-        <div id="projects" className="h-screen flex items-center justify-center relative mb-166">
+        <div id="projects" className="h-screen flex items-center justify-center relative">
           <Projects/>
         </div>
         <div id="experience" className="h-screen flex items-center justify-center relative">
           <Experience/>
         </div>
         <div id="contact" className="h-screen flex items-center justify-center relative">
-          <h1 className="text-4xl">Contact Section</h1>
+          <Contact/>
         </div>
       </div>
     </ThemeProvider>

@@ -3,7 +3,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
 import Home from './components/Home';
-import Navbar from './components/Navbar';
+import MainLayout from './components/MainLayout'; // Import MainLayout
 import ParticlesComponent from './components/Particles';
 import Projects from './components/Projects';
 import { ThemeProvider } from './ThemeContext';
@@ -15,9 +15,8 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <div>
+      <MainLayout>
         <ParticlesComponent />
-        <Navbar />
         <div id="home" className="h-screen flex items-center justify-center relative mb-144">
           <Home />
         </div>
@@ -25,15 +24,15 @@ const App = () => {
           <About />
         </div>
         <div id="projects" className="h-screen flex items-center justify-center relative">
-          <Projects/>
+          <Projects />
         </div>
         <div id="experience" className="h-screen flex items-center justify-center relative">
-          <Experience/>
+          <Experience />
         </div>
         <div id="contact" className="h-screen flex items-center justify-center relative">
-          <Contact/>
+          <Contact />
         </div>
-      </div>
+      </MainLayout>
     </ThemeProvider>
   );
 };
